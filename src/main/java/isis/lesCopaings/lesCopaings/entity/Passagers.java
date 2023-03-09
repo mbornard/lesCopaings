@@ -1,4 +1,4 @@
-package entity;
+package isis.lesCopaings.lesCopaings.entity;
 
 import jakarta.persistence.*;
 
@@ -14,11 +14,11 @@ public class Passagers {
     @Column(name = "numtrajet")
     private Integer numtrajet;
     @Basic
-    @Column(name = "pointdepartpassager")
-    private Object pointdepartpassager;
+    @Column(name = "idpointdepartpassager")
+    private Integer idpointdepartpassager;
     @Basic
-    @Column(name = "pointarriveepassager")
-    private Object pointarriveepassager;
+    @Column(name = "idpointarriveepassager")
+    private Integer idpointarriveepassager;
 
     public Integer getUserid() {
         return userid;
@@ -36,20 +36,20 @@ public class Passagers {
         this.numtrajet = numtrajet;
     }
 
-    public Object getPointdepartpassager() {
-        return pointdepartpassager;
+    public Integer getIdpointdepartpassager() {
+        return idpointdepartpassager;
     }
 
-    public void setPointdepartpassager(Object pointdepartpassager) {
-        this.pointdepartpassager = pointdepartpassager;
+    public void setIdpointdepartpassager(Integer idpointdepartpassager) {
+        this.idpointdepartpassager = idpointdepartpassager;
     }
 
-    public Object getPointarriveepassager() {
-        return pointarriveepassager;
+    public Integer getIdpointarriveepassager() {
+        return idpointarriveepassager;
     }
 
-    public void setPointarriveepassager(Object pointarriveepassager) {
-        this.pointarriveepassager = pointarriveepassager;
+    public void setIdpointarriveepassager(Integer idpointarriveepassager) {
+        this.idpointarriveepassager = idpointarriveepassager;
     }
 
     @Override
@@ -61,9 +61,9 @@ public class Passagers {
 
         if (userid != null ? !userid.equals(passagers.userid) : passagers.userid != null) return false;
         if (numtrajet != null ? !numtrajet.equals(passagers.numtrajet) : passagers.numtrajet != null) return false;
-        if (pointdepartpassager != null ? !pointdepartpassager.equals(passagers.pointdepartpassager) : passagers.pointdepartpassager != null)
+        if (idpointdepartpassager != null ? !idpointdepartpassager.equals(passagers.idpointdepartpassager) : passagers.idpointdepartpassager != null)
             return false;
-        if (pointarriveepassager != null ? !pointarriveepassager.equals(passagers.pointarriveepassager) : passagers.pointarriveepassager != null)
+        if (idpointarriveepassager != null ? !idpointarriveepassager.equals(passagers.idpointarriveepassager) : passagers.idpointarriveepassager != null)
             return false;
 
         return true;
@@ -73,8 +73,8 @@ public class Passagers {
     public int hashCode() {
         int result = userid != null ? userid.hashCode() : 0;
         result = 31 * result + (numtrajet != null ? numtrajet.hashCode() : 0);
-        result = 31 * result + (pointdepartpassager != null ? pointdepartpassager.hashCode() : 0);
-        result = 31 * result + (pointarriveepassager != null ? pointarriveepassager.hashCode() : 0);
+        result = 31 * result + (idpointdepartpassager != null ? idpointdepartpassager.hashCode() : 0);
+        result = 31 * result + (idpointarriveepassager != null ? idpointarriveepassager.hashCode() : 0);
         return result;
     }
 }

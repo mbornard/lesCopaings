@@ -1,4 +1,4 @@
-package entity;
+package isis.lesCopaings.lesCopaings.entity;
 
 import jakarta.persistence.*;
 
@@ -15,11 +15,11 @@ public class Trajet {
     @Column(name = "userid")
     private Integer userid;
     @Basic
-    @Column(name = "pointdepart")
-    private Object pointdepart;
+    @Column(name = "idpointdepart")
+    private Integer idpointdepart;
     @Basic
-    @Column(name = "pointarrivee")
-    private Object pointarrivee;
+    @Column(name = "idpointarrivee")
+    private Integer idpointarrivee;
     @Basic
     @Column(name = "datedepart")
     private Date datedepart;
@@ -43,20 +43,20 @@ public class Trajet {
         this.userid = userid;
     }
 
-    public Object getPointdepart() {
-        return pointdepart;
+    public Integer getIdpointdepart() {
+        return idpointdepart;
     }
 
-    public void setPointdepart(Object pointdepart) {
-        this.pointdepart = pointdepart;
+    public void setIdpointdepart(Integer idpointdepart) {
+        this.idpointdepart = idpointdepart;
     }
 
-    public Object getPointarrivee() {
-        return pointarrivee;
+    public Integer getIdpointarrivee() {
+        return idpointarrivee;
     }
 
-    public void setPointarrivee(Object pointarrivee) {
-        this.pointarrivee = pointarrivee;
+    public void setIdpointarrivee(Integer idpointarrivee) {
+        this.idpointarrivee = idpointarrivee;
     }
 
     public Date getDatedepart() {
@@ -84,8 +84,9 @@ public class Trajet {
 
         if (numtrajet != null ? !numtrajet.equals(trajet.numtrajet) : trajet.numtrajet != null) return false;
         if (userid != null ? !userid.equals(trajet.userid) : trajet.userid != null) return false;
-        if (pointdepart != null ? !pointdepart.equals(trajet.pointdepart) : trajet.pointdepart != null) return false;
-        if (pointarrivee != null ? !pointarrivee.equals(trajet.pointarrivee) : trajet.pointarrivee != null)
+        if (idpointdepart != null ? !idpointdepart.equals(trajet.idpointdepart) : trajet.idpointdepart != null)
+            return false;
+        if (idpointarrivee != null ? !idpointarrivee.equals(trajet.idpointarrivee) : trajet.idpointarrivee != null)
             return false;
         if (datedepart != null ? !datedepart.equals(trajet.datedepart) : trajet.datedepart != null) return false;
         if (heuredepart != null ? !heuredepart.equals(trajet.heuredepart) : trajet.heuredepart != null) return false;
@@ -97,8 +98,8 @@ public class Trajet {
     public int hashCode() {
         int result = numtrajet != null ? numtrajet.hashCode() : 0;
         result = 31 * result + (userid != null ? userid.hashCode() : 0);
-        result = 31 * result + (pointdepart != null ? pointdepart.hashCode() : 0);
-        result = 31 * result + (pointarrivee != null ? pointarrivee.hashCode() : 0);
+        result = 31 * result + (idpointdepart != null ? idpointdepart.hashCode() : 0);
+        result = 31 * result + (idpointarrivee != null ? idpointarrivee.hashCode() : 0);
         result = 31 * result + (datedepart != null ? datedepart.hashCode() : 0);
         result = 31 * result + (heuredepart != null ? heuredepart.hashCode() : 0);
         return result;

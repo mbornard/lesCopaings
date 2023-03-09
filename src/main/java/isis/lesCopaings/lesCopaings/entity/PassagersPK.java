@@ -1,4 +1,4 @@
-package entity;
+package isis.lesCopaings.lesCopaings.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package entity;
+package isis.lesCopaings.lesCopaings;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

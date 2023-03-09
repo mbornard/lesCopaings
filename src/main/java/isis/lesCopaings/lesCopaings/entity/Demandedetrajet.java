@@ -1,4 +1,4 @@
-package entity;
+package isis.lesCopaings.lesCopaings.entity;
 
 import jakarta.persistence.*;
 
@@ -15,17 +15,17 @@ public class Demandedetrajet {
     @Column(name = "userid")
     private Integer userid;
     @Basic
-    @Column(name = "pointdepartpassager")
-    private Object pointdepartpassager;
-    @Basic
-    @Column(name = "pointarriveepassager")
-    private Object pointarriveepassager;
-    @Basic
     @Column(name = "datedepart")
     private Date datedepart;
     @Basic
     @Column(name = "heuredepart")
     private Time heuredepart;
+    @Basic
+    @Column(name = "pointdepartpassager")
+    private Integer pointdepartpassager;
+    @Basic
+    @Column(name = "pointarriveepassager")
+    private Integer pointarriveepassager;
 
     public Integer getNumtrajet() {
         return numtrajet;
@@ -41,22 +41,6 @@ public class Demandedetrajet {
 
     public void setUserid(Integer userid) {
         this.userid = userid;
-    }
-
-    public Object getPointdepartpassager() {
-        return pointdepartpassager;
-    }
-
-    public void setPointdepartpassager(Object pointdepartpassager) {
-        this.pointdepartpassager = pointdepartpassager;
-    }
-
-    public Object getPointarriveepassager() {
-        return pointarriveepassager;
-    }
-
-    public void setPointarriveepassager(Object pointarriveepassager) {
-        this.pointarriveepassager = pointarriveepassager;
     }
 
     public Date getDatedepart() {
@@ -75,6 +59,22 @@ public class Demandedetrajet {
         this.heuredepart = heuredepart;
     }
 
+    public Integer getPointdepartpassager() {
+        return pointdepartpassager;
+    }
+
+    public void setPointdepartpassager(Integer pointdepartpassager) {
+        this.pointdepartpassager = pointdepartpassager;
+    }
+
+    public Integer getPointarriveepassager() {
+        return pointarriveepassager;
+    }
+
+    public void setPointarriveepassager(Integer pointarriveepassager) {
+        this.pointarriveepassager = pointarriveepassager;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -84,12 +84,12 @@ public class Demandedetrajet {
 
         if (numtrajet != null ? !numtrajet.equals(that.numtrajet) : that.numtrajet != null) return false;
         if (userid != null ? !userid.equals(that.userid) : that.userid != null) return false;
+        if (datedepart != null ? !datedepart.equals(that.datedepart) : that.datedepart != null) return false;
+        if (heuredepart != null ? !heuredepart.equals(that.heuredepart) : that.heuredepart != null) return false;
         if (pointdepartpassager != null ? !pointdepartpassager.equals(that.pointdepartpassager) : that.pointdepartpassager != null)
             return false;
         if (pointarriveepassager != null ? !pointarriveepassager.equals(that.pointarriveepassager) : that.pointarriveepassager != null)
             return false;
-        if (datedepart != null ? !datedepart.equals(that.datedepart) : that.datedepart != null) return false;
-        if (heuredepart != null ? !heuredepart.equals(that.heuredepart) : that.heuredepart != null) return false;
 
         return true;
     }
@@ -98,10 +98,10 @@ public class Demandedetrajet {
     public int hashCode() {
         int result = numtrajet != null ? numtrajet.hashCode() : 0;
         result = 31 * result + (userid != null ? userid.hashCode() : 0);
-        result = 31 * result + (pointdepartpassager != null ? pointdepartpassager.hashCode() : 0);
-        result = 31 * result + (pointarriveepassager != null ? pointarriveepassager.hashCode() : 0);
         result = 31 * result + (datedepart != null ? datedepart.hashCode() : 0);
         result = 31 * result + (heuredepart != null ? heuredepart.hashCode() : 0);
+        result = 31 * result + (pointdepartpassager != null ? pointdepartpassager.hashCode() : 0);
+        result = 31 * result + (pointarriveepassager != null ? pointarriveepassager.hashCode() : 0);
         return result;
     }
 }

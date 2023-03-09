@@ -1,17 +1,20 @@
-package entity;
+package isis.lesCopaings.lesCopaings.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Entity
-@IdClass(PointarretPK.class)
-public class Pointarret {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
+import java.io.Serializable;
+
+public class PointarretPK implements Serializable {
     @Column(name = "numtrajet")
-    private Integer numtrajet;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer numtrajet;
     @Column(name = "idpoint")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idpoint;
 
     public Integer getNumtrajet() {
@@ -35,7 +38,7 @@ public class Pointarret {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Pointarret that = (Pointarret) o;
+        PointarretPK that = (PointarretPK) o;
 
         if (numtrajet != null ? !numtrajet.equals(that.numtrajet) : that.numtrajet != null) return false;
         if (idpoint != null ? !idpoint.equals(that.idpoint) : that.idpoint != null) return false;
