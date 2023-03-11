@@ -1,6 +1,7 @@
 package isis.lesCopaings.lesCopaings.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @IdClass(PassagersPK.class)
@@ -8,10 +9,18 @@ public class Passagers {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "userid")
+    /*@JoinColumn(nullable = false)
+    @OneToOne(optional =false)
+    @NonNull
+    private Utilisateur utilisateur;*/
     private Integer userid;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "numtrajet")
+    /*@JoinColumn(nullable = false)
+    @ManyToOne(optional = false)
+    @NonNull
+    private Trajet trajet;*/
     private Integer numtrajet;
     @Basic
     @Column(name = "idpointdepartpassager")
