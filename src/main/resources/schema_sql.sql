@@ -51,7 +51,18 @@ create table Point(
 	latitude numeric
 	);
 
+create table DemandeDeTrajet (
+    numTrajet int primary key,
+    userID int,
+    idpointDepart int,
+    idpointArrivee int,
+    dateDepart date,
+    heureDepart time,
+    constraint fk_idPointDepart foreign key (idpointDepart) references Point(idPoint),
+    constraint fk_idpointArrivee foreign key (idpointArrivee) references Point(idPoint)
 
+
+);
 
 
 
