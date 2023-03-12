@@ -20,7 +20,7 @@ create table Trajet (
 
 );
 
-	constraint fk_userID foreign key (userID) references Utilisateur(userID)
+	/*constraint fk_userID foreign key (userID) references Utilisateur(userID)*/
 create table Passagers(
 	userID int,
 	numTrajet int,
@@ -40,7 +40,7 @@ create table PointArret(
 	CONSTRAINT numTrajet_FK FOREIGN KEY (numTrajet) REFERENCES Trajet (numTrajet),
 	CONSTRAINT idPoint_FK FOREIGN KEY (idPoint) REFERENCES Point (idPoint)
 
-	)
+	);
 
 
 create table Point(
